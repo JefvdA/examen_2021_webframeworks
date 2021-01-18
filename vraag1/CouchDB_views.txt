@@ -1,0 +1,15 @@
+2/ search on movie name
+
+function (doc) {
+  if(doc.type == "movie"){
+    emit(doc.name, doc.actors)
+  }
+}
+
+3/ search on actor name
+
+function (doc) {
+  if(doc.type == "movie"){
+    emit(doc.actors, doc.name)
+  }
+}
